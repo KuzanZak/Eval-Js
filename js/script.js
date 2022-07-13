@@ -61,3 +61,15 @@ function displayColorButton(){
     ajoutPanier.style.backgroundColor = "black";
 }
 
+// ACCORDEONS //
+const avantages = document.getElementById("avantages")
+const avantagesUl = document.getElementById("avantages-ul")
+const caracteristics = document.getElementById("caracteristics")
+const caracteristicsUl = document.getElementById("caracteristics-ul")
+
+avantages.addEventListener("click", function(event){
+    avantagesUl.classList.toggle("hidden");
+})
+caracteristics.addEventListener("click", function(event){
+    caracteristicsUl.classList.toggle("hidden");
+})

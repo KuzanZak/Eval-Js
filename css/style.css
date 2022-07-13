@@ -495,3 +495,8 @@ body {
 .legal-lnk {
     color: #fff;
 }
+
+/* On fait n'imp sur ton css ^^ */ 
+.hidden{
+    display: none;
+}
