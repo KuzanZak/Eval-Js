@@ -20,7 +20,6 @@ function displayLNImg(){
 displayLNImg();
 
  // HOVER ON DESKTOP // 
- 
  function hoverDisplayImg(){
      const thumbs = document.getElementById("thumbs");
 
@@ -65,14 +64,6 @@ const avantagesUl = document.getElementById("avantages-ul")
 const caracteristics = document.getElementById("caracteristics")
 const caracteristicsUl = document.getElementById("caracteristics-ul")
 
-// const hidden = localStorage.setItem(`hidden`, `hidden`);
-// const hiddenD = localStorage.getItem(`hidden`);
-
-// localStorage.setItem('style', avantagesUl.classList.toggle("hidden"))
-// localStorage.setItem('styleArrow', avantagesUl.classList.toggle("closed"))
-
-
-
 function accordeons(){
     avantages.addEventListener("click", function(event){
         avantagesUl.classList.toggle("hidden");
@@ -91,6 +82,7 @@ function accordeons(){
 }
 accordeons();
 
+// LOCALSTORAGE // 
 function local(){
     avantagesUl.setAttribute("class", localStorage.getItem('styleA')),
     avantages.setAttribute("class", localStorage.getItem('styleArrow')),
@@ -99,18 +91,6 @@ function local(){
 }
 
 document.body.onload = local();
-
-
-// document.body.onload = avantages.setAttribute("class", localStorage.getItem('styleArrow'))
-// document.body.onload = caracteristicsUl.setAttribute("class", localStorage.getItem("styleA"))
-// document.body.onload = caracteristics.setAttribute("class", localStorage.getItem("styleArrow"))
-
-
-localStorage.setItem('styleArrowA', avantages.classList.toggle("closed"))
-// localStorage.setItem('styleC', caracteristicsUl.classList.toggle("hidden"))
-// localStorage.setItem('styleArrowC', caracteristics.classList.toggle("closed"))
-
-// LOCALSTORAGE // 
 
 
 // CARROUSSEL // 
@@ -124,13 +104,15 @@ let countCarousel = 0;
 function switchCarousel(){
     buttonRight.addEventListener("click", function(event){
         countCarousel++;
-        if (countCarousel === 3) buttonRight.classList.add("hidden");    
+        carouselContents[countCarousel-1].classList.toggle("hidden");
         carouselContents[countCarousel].classList.toggle("hidden");
+        if (countCarousel === 3) buttonRight.classList.add("hidden");    
         if (countCarousel >= 1) buttonLeft.classList.remove("hidden");
     })
     
     buttonLeft.addEventListener("click", function(event){
-        carouselContents[countCarousel].classList.toggle("hidden");
+        carouselContents[countCarousel-1].classList.toggle("hidden");
+        carouselContents[countCarousel].classList.toggle("hidden");        
         countCarousel--;
         buttonRight.classList.remove("hidden")
         if (countCarousel ===0) buttonLeft.classList.add("hidden")
