@@ -67,9 +67,13 @@ const avantagesUl = document.getElementById("avantages-ul")
 const caracteristics = document.getElementById("caracteristics")
 const caracteristicsUl = document.getElementById("caracteristics-ul")
 
-avantages.addEventListener("click", function(event){
-    avantagesUl.classList.toggle("hidden");
-})
-caracteristics.addEventListener("click", function(event){
-    caracteristicsUl.classList.toggle("hidden");
-})
+function accordeons(){
+    avantages.addEventListener("click", function(event){
+        avantagesUl.classList.toggle("hidden");
+        avantages.classList.toggle("closed")
+    })
+    caracteristics.addEventListener("click", function(event){
+        caracteristicsUl.classList.toggle("hidden");
+        caracteristics.classList.toggle("closed")
+    })
+}
