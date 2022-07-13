@@ -33,3 +33,17 @@ displayLNImg();
  }
 
  hoverDisplayImg();
+
+ // AJOUT PANIER // 
+const ajoutPanier =  document.getElementById("add-cta"); 
+const compteur = document.getElementById("cart-nb");
+const quantité = document.getElementById("add-qty");
+
+ajoutPanier.addEventListener("click", function(event){
+    if (quantité.value > 99) {
+        compteur.innerText = "99+";
+        return; 
+    } 
+    if (quantité.value < 1) return; 
+    compteur.innerText = quantité.value; 
+ })
