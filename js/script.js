@@ -8,14 +8,12 @@ function displayLNImg(){
         countImg++;
         if (countImg == 6) countImg = 1;
         displayImg.src = `img/canard-jaune-${countImg}-l.png`;
-        console.log(displayImg.src)
     })
     
     document.getElementById("last-img").addEventListener("click", function(event){
         countImg--;
         if (countImg == 0) countImg = 5;
         displayImg.src = `img/canard-jaune-${countImg}-l.png`;
-        console.log(displayImg.src)
     })
 }
 
@@ -70,22 +68,56 @@ const caracteristicsUl = document.getElementById("caracteristics-ul")
 // const hidden = localStorage.setItem(`hidden`, `hidden`);
 // const hiddenD = localStorage.getItem(`hidden`);
 
+// localStorage.setItem('style', avantagesUl.classList.toggle("hidden"))
+// localStorage.setItem('styleArrow', avantagesUl.classList.toggle("closed"))
+
+
+
 function accordeons(){
     avantages.addEventListener("click", function(event){
         avantagesUl.classList.toggle("hidden");
+        localStorage.setItem('styleA', avantagesUl.getAttribute("class"))
         avantages.classList.toggle("closed")
+        localStorage.setItem('styleArrow', avantages.getAttribute("class"))
+
     })
+    
     caracteristics.addEventListener("click", function(event){
         caracteristicsUl.classList.toggle("hidden");
+        localStorage.setItem('styleC', caracteristicsUl.getAttribute("class"))
         caracteristics.classList.toggle("closed")
+        localStorage.setItem('styleArrowC', caracteristics.getAttribute("class"))
     })
 }
 accordeons();
+
+function local(){
+    avantagesUl.setAttribute("class", localStorage.getItem('styleA')),
+    avantages.setAttribute("class", localStorage.getItem('styleArrow')),
+    caracteristicsUl.setAttribute("class", localStorage.getItem('styleC',)),
+    caracteristics.setAttribute("class", localStorage.getItem("styleArrowC"));
+}
+
+document.body.onload = local();
+
+
+// document.body.onload = avantages.setAttribute("class", localStorage.getItem('styleArrow'))
+// document.body.onload = caracteristicsUl.setAttribute("class", localStorage.getItem("styleA"))
+// document.body.onload = caracteristics.setAttribute("class", localStorage.getItem("styleArrow"))
+
+
+localStorage.setItem('styleArrowA', avantages.classList.toggle("closed"))
+// localStorage.setItem('styleC', caracteristicsUl.classList.toggle("hidden"))
+// localStorage.setItem('styleArrowC', caracteristics.classList.toggle("closed"))
+
+// LOCALSTORAGE // 
+
 
 // CARROUSSEL // 
 const buttonRight = document.getElementById("carousel_button-right");
 const buttonLeft = document.getElementById("carousel_button-left");
 const carouselContents = document.querySelectorAll(".carousel_slide");
+document.getElementById("carousel-container")
 
 
 let countCarousel = 0;
