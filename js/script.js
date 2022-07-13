@@ -39,11 +39,25 @@ const ajoutPanier =  document.getElementById("add-cta");
 const compteur = document.getElementById("cart-nb");
 const quantité = document.getElementById("add-qty");
 
-ajoutPanier.addEventListener("click", function(event){
+ajoutPanier.addEventListener("click", displayCountPanier);
+
+function displayCountPanier() {
     if (quantité.value > 99) {
         compteur.innerText = "99+";
+        displayColorButton()
+        ajoutPanier.removeEventListener("click", displayCountPanier)
         return; 
     } 
     if (quantité.value < 1) return; 
+    
     compteur.innerText = quantité.value; 
- })
+    displayColorButton()
+
+    ajoutPanier.removeEventListener("click", displayCountPanier);
+}
+
+function displayColorButton(){
+    ajoutPanier.innerText = "Déjà au panier";
+    ajoutPanier.style.backgroundColor = "black";
+}
+
