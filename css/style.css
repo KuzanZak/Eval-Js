@@ -500,3 +500,56 @@ body {
 .hidden{
     display: none;
 }
+
+/* CAROUSSEL */ 
+.carousel{
+    position: relative;
+    height: 42rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.carousel_images{
+    width: 100%;
+    height: auto;
+}
+
+.caroussel_track-container{
+    height: 100%;
+    position: relative;
+}
+
+.carousel_track{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.carousel_slide{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.carousel_button{
+    position: absolute;
+    font-size: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+    z-index: 1;
+}
+
+.carousel_button-left{
+    left: -3rem;
+}
+
+.carousel_button-right{
+    right: -3rem;
+}
+
+.carousel_button img{
+    width: 1rem;
+}
