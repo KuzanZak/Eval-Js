@@ -88,10 +88,10 @@
             <h2 class="product-subttl">Articles similaires</h2>
 
             <div class="carousel">
-                <button id="last-img" class="carousel_button carousel_button-left" type="button">◀️</button>
+                <button id="carousel_button-left" class="carousel_button carousel_button-left" type="button">◀️</button>
 
-                <div class="caroussel_track-container">
-                    <ul class="carousel_track">
+                <div class="caroussel-container">
+                    <ul id="carousel-contents" class="carousel-contents">
                         <li class="carousel_slide">
                             <a class="similar-lnk" href="#">
                                 <img class="carousel_images" src="img/canard-dragon.png" alt="canard dragon">
@@ -99,21 +99,21 @@
                                 <div class="similar-price">19€95</div>
                             </a>
                         </li>
-                        <li class="carousel_slide">
+                        <li class="carousel_slide hidden">
                             <a class="similar-lnk" href="#">
                                 <img class="carousel_images" src="img/canard-geek.png" alt="canard geek">
                                 <h3 class="similar-ttl">Canard Geek</h3>
                                 <div class="similar-price">19€95</div>
                             </a>
                         </li>
-                        <li class="carousel_slide">
+                        <li class="carousel_slide hidden">
                             <a class="similar-lnk" href="#">
                                 <img class="carousel_images" src="img/canard-licorne.png" alt="canard licorne">
                                 <h3 class="similar-ttl">Canard Licorne</h3>
                                 <div class="similar-price">19€95</div>
                             </a>
                         </li>
-                        <li class="carousel_slide">
+                        <li class="carousel_slide hidden">
                             <a class="similar-lnk" href="#">
                                 <img class="carousel_images" src="img/canard-bowie.png" alt="canard David Bowie">
                                 <h3 class="similar-ttl">Ziggy StarDuck</h3>
@@ -123,7 +123,7 @@
                     </ul>
                 </div>
 
-                <button id="next-img" class="carousel_button carousel_button-right" type="button">▶️</button>
+                <button id="carousel_button-right" class="carousel_button carousel_button-right" type="button">▶️</button>
             </div>
         </section>
     </main>

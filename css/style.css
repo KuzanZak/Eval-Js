@@ -514,12 +514,12 @@ body {
     height: auto;
 }
 
-.caroussel_track-container{
+.caroussel-container{
     height: 100%;
     position: relative;
 }
 
-.carousel_track{
+.carousel-contents{
     padding: 0;
     margin: 0;
     list-style: none;

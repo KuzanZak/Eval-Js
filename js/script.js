@@ -83,3 +83,23 @@ function accordeons(){
 accordeons();
 
 // CARROUSSEL // 
+const buttonRight = document.getElementById("carousel_button-right");
+const buttonLeft = document.getElementById("carousel_button-left");
+const carouselContents = document.querySelectorAll(".carousel_slide");
+
+
+let countCarousel = 0;
+buttonRight.addEventListener("click", function(event){
+    countCarousel++;
+    if (countCarousel > 2) buttonRight.classList.add("hidden");
+    carouselContents[countCarousel].classList.toggle("hidden");
+})
+
+
+buttonLeft.addEventListener("click", function(event){
+    countCarousel--;
+    // if (countCarousel == 0) buttonLeft.classList.add("hidden");
+    carouselContents[countCarousel-1].classList.toggle("hidden");
+    // console.log(carouselContents[countCarousel-1])
+    // console.log(countCarousel)
+})
