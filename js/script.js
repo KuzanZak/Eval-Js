@@ -89,17 +89,19 @@ const carouselContents = document.querySelectorAll(".carousel_slide");
 
 
 let countCarousel = 0;
-buttonRight.addEventListener("click", function(event){
-    countCarousel++;
-    if (countCarousel > 2) buttonRight.classList.add("hidden");
-    carouselContents[countCarousel].classList.toggle("hidden");
-})
-
-
-buttonLeft.addEventListener("click", function(event){
-    countCarousel--;
-    // if (countCarousel == 0) buttonLeft.classList.add("hidden");
-    carouselContents[countCarousel-1].classList.toggle("hidden");
-    // console.log(carouselContents[countCarousel-1])
-    // console.log(countCarousel)
-})
+function switchCarousel(){
+    buttonRight.addEventListener("click", function(event){
+        countCarousel++;
+        if (countCarousel === 3) buttonRight.classList.add("hidden");    
+        carouselContents[countCarousel].classList.toggle("hidden");
+        if (countCarousel >= 1) buttonLeft.classList.remove("hidden");
+    })
+    
+    buttonLeft.addEventListener("click", function(event){
+        carouselContents[countCarousel].classList.toggle("hidden");
+        countCarousel--;
+        buttonRight.classList.remove("hidden")
+        if (countCarousel ===0) buttonLeft.classList.add("hidden")
+    });
+}
+switchCarousel();
