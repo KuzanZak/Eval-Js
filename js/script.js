@@ -67,6 +67,9 @@ const avantagesUl = document.getElementById("avantages-ul")
 const caracteristics = document.getElementById("caracteristics")
 const caracteristicsUl = document.getElementById("caracteristics-ul")
 
+// const hidden = localStorage.setItem(`hidden`, `hidden`);
+// const hiddenD = localStorage.getItem(`hidden`);
+
 function accordeons(){
     avantages.addEventListener("click", function(event){
         avantagesUl.classList.toggle("hidden");
@@ -77,3 +80,5 @@ function accordeons(){
         caracteristics.classList.toggle("closed")
     })
 }
+accordeons();
+
